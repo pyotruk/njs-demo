@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  njs-worker:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: njs-worker
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx-logs:/var/log/nginx
