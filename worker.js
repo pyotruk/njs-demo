@@ -2,7 +2,7 @@ function hello(r) {
     // r.return(200, `http://${r.args.url}`);
 
     r.return(200, JSON.stringify({
-        version: njs.version,
+        njsModuleVersion: njs.version,
         nginxVersion: r.variables.nginx_version
     }));
 
