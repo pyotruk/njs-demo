@@ -1,9 +1,4 @@
-function hello(r) {
-    // r.return(200, JSON.stringify({
-    //     njsModuleVersion: njs.version,
-    //     nginxVersion: r.variables.nginx_version
-    // }));
-
+function main(r) {
     ngx.fetch(`http://${r.args.url}`)
         .then(reply => reply.text())
         .then(body => {
@@ -13,4 +8,4 @@ function hello(r) {
         .catch(e => r.return(501, e.message));
 }
 
-export default {hello};
+export default {main};

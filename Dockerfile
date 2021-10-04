@@ -124,10 +124,6 @@ STOPSIGNAL SIGQUIT
 
 CMD ["nginx", "-g", "daemon off;"]
 
-#FROM dockette/nginx
-
-COPY . /usr/src/application
-WORKDIR /usr/src/application
-
+# Custom Docker configuration
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./worker.js /etc/nginx/worker.js
+COPY ./workers/* /etc/nginx/
